@@ -3,7 +3,8 @@ package week11.st078050.finalproject
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import week11.st078050.finalproject.screens.SplashScreen
+import androidx.navigation.compose.rememberNavController
+import week11.st078050.finalproject.navigation.AppNavGraph
 import week11.st078050.finalproject.ui.theme.FitTrackrTheme
 
 class MainActivity : ComponentActivity() {
@@ -12,11 +13,8 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             FitTrackrTheme {
-                SplashScreen(
-                    onLoginClick = {},
-                    onRegisterClick = {},
-                    onGuestClick = {}
-                )
+                val navController = rememberNavController()
+                AppNavGraph(navController)
             }
         }
     }
